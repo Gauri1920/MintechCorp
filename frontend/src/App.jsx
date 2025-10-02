@@ -11,6 +11,8 @@ import Newsletter from "./components/Newsletter/Newsletter";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/pages/Login";
 import Signup from './components/pages/Signup';
+import Service from "./components/pages/services";
+import Projects from "./components/pages/projects";
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -60,6 +62,8 @@ const App = () => {
             )
           }
         />
+  <Route path="/services" element={<Service />} /> 
+  <Route path="/projects" element={isAuth ? <Projects /> : <Navigate to="/login" />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
